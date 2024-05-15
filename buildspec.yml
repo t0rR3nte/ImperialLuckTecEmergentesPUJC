@@ -1,12 +1,12 @@
 version: 0.0
 os: linux
-files:
-  - source: index.html
-    destination: /var/www/html/
 phases:
   install:
     runtime-versions:
       python: 3.11
   build:
     commands:
-      - python index.py
+      - python -m venv venv
+      - source venv/bin/activate
+      - pip install -r requirements.txt
+      - lambda invoke --function-name lambda_handler
