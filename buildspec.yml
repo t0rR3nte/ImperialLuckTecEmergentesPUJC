@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /ui/index.html
+  - source: index.html
     destination: /var/www/html/
 phases:
   install:
@@ -9,4 +9,4 @@ phases:
       python: 3.11
   build:
     commands:
-      - python /lambda/index.py
+      - python index.py
